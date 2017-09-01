@@ -2,10 +2,8 @@ import {Component} from '@angular/core';
 
 @Component({
 	selector:'tienda',
-	template:`
-	<h1>{{titulo}}</h1>
-	`,
-	styles:['h1{color:blue}']
+	templateUrl:'tienda.component.html',
+	styleUrls:['tienda.component.css']
 })
 
 export class TiendaComponent {
