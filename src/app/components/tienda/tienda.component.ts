@@ -9,7 +9,13 @@ import {Component} from '@angular/core';
 export class TiendaComponent {
 
 	public titulo;
+	public nombreDelparque: string;
+
 	constructor(){
-		this.titulo='Esta es la tienda'
+		this.titulo='Esta es la tienda';
+	}
+
+	mostrarNombre(){
+		console.log(this.nombreDelparque);
 	}
 }

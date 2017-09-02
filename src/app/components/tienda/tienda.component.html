@@ -5,3 +5,15 @@
 	<li>Camiseta</li>
 	<li>zapato</li>
 </ul>
+
+  <hr>
+  NOmbre parque:
+  <input type="text" [(ngModel)]="nombreDelparque" (keyup)="mostrarNombre()"/>
+  <p>
+  	Resultado: {{nombreDelparque}}
+  </p>
+
+<p *ngIf="nombreDelparque">
+	<parques [nombre]="nombreDelparque" [metros_c]="55555"></parques>
+</p>
+  
