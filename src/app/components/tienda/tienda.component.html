@@ -2,18 +2,34 @@
 
 
 <ul>
-	<li>Camiseta</li>
-	<li>zapato</li>
+  <li>Camiseta</li>
+  <li>zapato</li>
 </ul>
 
-  <hr>
-  NOmbre parque:
-  <input type="text" [(ngModel)]="nombreDelparque" (keyup)="mostrarNombre()"/>
-  <p>
-  	Resultado: {{nombreDelparque}}
-  </p>
-
-<p *ngIf="nombreDelparque">
-	<parques [nombre]="nombreDelparque" [metros_c]="55555"></parques>
+<hr>
+NOmbre parque:
+<input type="text" [(ngModel)]="nombreDelparque" (keyup)="mostrarNombre()"/>
+<p>
+  Resultado: {{nombreDelparque}}
 </p>
-  
+
+<div *ngIf="miParque">
+  <h4>Datos de miParque desde el hijo</h4>
+
+  <ol>
+    <li>{{miParque.nombre}}</li>
+    <li>{{miParque.metros}}</li>
+    <li>{{miParque.vegetacion}}</li>
+    <li>{{miParque.abierto}}</li>
+  </ol>
+
+</div>
+
+
+<hr>
+<p *ngIf="nombreDelparque">
+  <parques [nombre]="nombreDelparque"
+           [metros_c]="55555"
+           (pasameDatos)="verDatosParque($event)"
+  ></parques>
+</p>
