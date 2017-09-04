@@ -1,4 +1,7 @@
-import {Component, Input, Output, EventEmitter, OnChanges, SimpleChange, SimpleChanges} from '@angular/core';
+import {
+  Component, Input, Output, EventEmitter,
+  OnChanges, SimpleChanges, OnInit
+} from '@angular/core';
 
 @Component({
   selector: 'parques',
@@ -6,7 +9,7 @@ import {Component, Input, Output, EventEmitter, OnChanges, SimpleChange, SimpleC
   styleUrls: ['parques.component.css']
 })
 
-export class ParquesComponent implements OnChanges{
+export class ParquesComponent implements OnChanges, OnInit {
 
 
   @Input() nombre: String;
@@ -22,8 +25,14 @@ export class ParquesComponent implements OnChanges{
     this.vegetacion = 'Atlas';
     this.abierto = true;
   }
+
+  //ciclos de vida de los componentes
   ngOnChanges(changes: SimpleChanges): void {
-    console.log("Existen cambios en las propiedades");
+    console.log('Existen cambios en las propiedades');
+  }
+
+  ngOnInit(): void {
+    console.log('Meotodo OnInit Lanzado');
   }
 
   emitirEvento() {
