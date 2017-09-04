@@ -1,6 +1,6 @@
 import {
   Component, Input, Output, EventEmitter,
-  OnChanges, SimpleChanges, OnInit, DoCheck
+  OnChanges, SimpleChanges, OnInit, DoCheck, OnDestroy
 } from '@angular/core';
 
 @Component({
@@ -9,7 +9,7 @@ import {
   styleUrls: ['parques.component.css']
 })
 
-export class ParquesComponent implements OnChanges, OnInit, DoCheck {
+export class ParquesComponent implements OnChanges, OnInit, DoCheck, OnDestroy {
 
 
   @Input() nombre: String;
@@ -42,6 +42,11 @@ export class ParquesComponent implements OnChanges, OnInit, DoCheck {
   // --despues de iniciar el componente
   ngDoCheck(): void {
     console.log("Esto es doCHeck")
+  }
+
+  //se ejecuta antes de que se elimine un componente o directiva
+  ngOnDestroy(): void {
+    console.log("esto es ONDESTROY --- Se eliminatra el componente")
   }
 
   emitirEvento() {
