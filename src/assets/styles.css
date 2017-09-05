@@ -6,3 +6,6 @@
   border-radius: 5px;
   box-shadow: 2px 2px 1px #ccc;
 }
+.navbar-nav .active{
+  border-bottom: 3px solid orange;
+}
