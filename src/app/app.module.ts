@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import {routing, appRoutingProviders} from './app.routing';
 //componentes
 import { AppComponent } from './app.component';
+import {SimpleTinyComponent} from './components/simpletiny/simpletiny.component';
 import {TiendaComponent} from './components/tienda/tienda.component'
 import {ParquesComponent} from './components/parques/parques.component'
 import {HomeComponent} from './components/home/home.component';
@@ -13,9 +14,11 @@ import {ContactComponent} from './components/contact/contact.component';
 import {AnimalsComponent} from './components/animals/animals.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
+    SimpleTinyComponent,
     TiendaComponent,
     ParquesComponent,
     HomeComponent,
