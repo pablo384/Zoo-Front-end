@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './home.component.html',
 })
 export class HomeComponent implements OnInit{
-  title="Home";
+  title="Bienvenido a NGZOO";
 
   ngOnInit(): void {
     console.log('home.component.ts')
