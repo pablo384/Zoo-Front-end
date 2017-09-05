@@ -14,7 +14,7 @@ export class ContactComponent implements OnInit{
   guardarEmail(){
     //local storage
     localStorage.setItem('emailContacto',this.emailContacto);
-    console.log(localStorage.getItem('emailContacto'))
+    //console.log(localStorage.getItem('emailContacto'))
 
   }
 }
