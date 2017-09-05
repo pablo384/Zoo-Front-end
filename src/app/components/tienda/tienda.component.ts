@@ -21,10 +21,12 @@ export class TiendaComponent implements OnInit{
   ngOnInit(): void {
     $('#textojq').hide();
     $('#botonjq').click(function () {
-      console.log('clic desde jquery')
+      console.log('clic desde jquery');
       $('#textojq').slideToggle();
+    });
 
-    })
+
+    $('#caja').dotdotdot({});
   }
 
   mostrarNombre() {
