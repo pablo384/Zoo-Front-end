@@ -20,6 +20,8 @@
   border-radius: 20px;
   border:4px solid blue;
   transition: border 1s, border-radius 500ms, background 5s;
+  display: block;
+  width: 100px;
 
 }
 .boton_transiciones:hover{
@@ -29,4 +31,66 @@
   border-radius: 2px;
   background: #CCCCCC;
   border:1px solid red;
+}
+.caja_animada{
+  margin-top: 15px;
+  background-color: green;
+  border:5px solid black;
+  width: 200px;
+  height: 200px;
+  animation-name: rotacion;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+
+}
+
+@keyframes rotacion {
+  0%{
+    margin-left: 0px;
+    transform: rotate(0deg);
+
+  }
+  50%{
+    margin-left: 600px;
+    transform: rotate(360deg);
+  }
+  100%{
+    margin-left: 0px;
+    transform: rotate(0deg);
+
+  }
+}
+
+@keyframes deslizamiento1 {
+  0%{
+    margin-left: 0px;
+
+  }
+  25%{
+    margin-left: 400px;
+    background: red;
+
+  }
+  50%{
+    border-radius: 1000px;
+  }
+  75%{
+    background: yellow;
+    margin-left: 0px;
+    border-radius: 0px;
+  }
+  100%{
+    background: green;
+  }
+}
+
+@keyframes deslizamiento {
+  from{
+    margin-left: 0px;
+
+  }
+  to{
+    margin-left: 400px;
+    background: red;
+  }
 }
