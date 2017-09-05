@@ -1,17 +1,45 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<h1>
-  Welcome to {{title}}!
-</h1>
-<a routerLink="home">Inicio</a>
-<a routerLink="animales">Animales</a>
-<a routerLink="cuidadores">Cuidadores</a>
-<a routerLink="tienda">Tienda</a>
-<a routerLink="contacto">Contacto</a>
+<div class="navigation col-lg-12">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" routerLink="home"> {{title}}</a>
+      </div>
 
-<span *ngIf="emailContacto">Email de contacto: <strong>{{emailContacto}}</strong>
-<button (click)="borrarEmail()">Eliminar email de contacto</button>
-</span>
+      <ul class="nav navbar-nav">
+        <li>
 
+          <a routerLink="home"> <span class="glyphicon glyphicon-home"></span>
+            Inicio</a>
+        </li>
+        <li>
+          <a routerLink="animales"><span class="glyphicon glyphicon-star"></span>
+            Animales</a>
+        </li>
+        <li>
+          <a routerLink="cuidadores"><span class="glyphicon glyphicon-user"></span>
+            Cuidadores</a>
+        </li>
+        <li>
+          <a routerLink="tienda"><span class="glyphicon glyphicon-gift"></span>
+            Tienda</a>
+        </li>
+        <li>
+          <a routerLink="contacto"><span class="glyphicon glyphicon-comment"></span>
+            Contacto</a>
+        </li>
+        <li class="hidden">
+          <span *ngIf="emailContacto">
+            Email de contacto: <strong>{{emailContacto}}</strong>
+            <button (click)="borrarEmail()">Eliminar email de contacto</button>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
 
-<hr>
-<router-outlet></router-outlet>
+<div class="col-lg-11">
+  <router-outlet></router-outlet>
+</div>
+
