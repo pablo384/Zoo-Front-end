@@ -6,6 +6,7 @@ import {routing, appRoutingProviders} from './app.routing';
 
 //importar nuestro nuevo modulo
 import {ModuloEmailModule} from './moduloemail/moduloEmail.module';
+import {AdminModule} from './admin/admin.module';
 
 
 //componentes
@@ -36,7 +37,8 @@ import {AnimalsComponent} from './components/animals/animals.component';
     BrowserModule,
     HttpModule,
     routing,
-    ModuloEmailModule
+    ModuloEmailModule,
+    AdminModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]

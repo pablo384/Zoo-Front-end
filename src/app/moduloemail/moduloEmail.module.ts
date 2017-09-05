@@ -6,7 +6,6 @@ import {CommonModule} from '@angular/common';
 import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
-import {routing, appRoutingProviders} from '../app.routing';
 
 //importar  componentes
 import {GuardarEmailComponent} from './components/guardar-email/guardar-email.component';
