@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {routing, appRoutingProviders} from './app.routing';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 //importar nuestro nuevo modulo
 import {ModuloEmailModule} from './moduloemail/moduloEmail.module';
@@ -38,7 +39,8 @@ import {AnimalsComponent} from './components/animals/animals.component';
     HttpModule,
     routing,
     ModuloEmailModule,
-    AdminModule
+    AdminModule,
+    BrowserAnimationsModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]

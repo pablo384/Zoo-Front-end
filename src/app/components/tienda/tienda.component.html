@@ -1,3 +1,11 @@
+<a class="boton_activo btn btn-success"
+[@marcar]="status" (click)="cambiarEstado(status)">
+  <span *ngIf="status == 'inactive'">Boton Inactivo</span>
+  <span *ngIf="status == 'active'">Boton Activado</span>
+</a>
+<hr>
+<h4>ANimaciones CSS3</h4>
+
 <a class="boton_transiciones">Transiciones</a>
 <div class="clearfix">
 

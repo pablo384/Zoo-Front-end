@@ -38,9 +38,9 @@
   border:5px solid black;
   width: 200px;
   height: 200px;
-  animation-name: rotacion;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
+  /*animation-name: rotacion;*/
+  /*animation-duration: 2s;*/
+  /*animation-iteration-count: infinite;*/
 
 }
 
