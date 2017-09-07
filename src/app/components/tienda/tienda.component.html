@@ -1,66 +1,80 @@
-<a class="boton_activo btn btn-success"
-[@marcar]="status" (click)="cambiarEstado(status)">
-  <span *ngIf="status == 'inactive'">Boton Inactivo</span>
-  <span *ngIf="status == 'active'">Boton Activado</span>
-</a>
-<hr>
-<h4>ANimaciones CSS3</h4>
+<div class="col-lg-12" [@fadeIn]>
+  <a class="boton_activo btn btn-success"
+     [@marcar]="status" (click)="cambiarEstado(status)">
+    <span *ngIf="status == 'inactive'">Boton Inactivo</span>
+    <span *ngIf="status == 'active'">Boton Activado</span>
+  </a>
+  <hr>
+  <h4>ANimaciones CSS3</h4>
 
-<a class="boton_transiciones">Transiciones</a>
-<div class="clearfix">
+  <a class="boton_transiciones">Transiciones</a>
+  <div class="clearfix">
 
+  </div>
+  <div class="caja_animada">
+
+  </div>
+  <hr>
+  <h4>Utilizar JQuery dentro de angular</h4>
+  <button id="botonjq">Mostrar Texto</button>
+  <p id="textojq" class="alert alert-warning">
+    Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de
+    relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la
+    imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos
+    especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos,
+    quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las
+    cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus
+    PageMaker, el cual incluye versiones de Lorem Ipsum.
+  </p>
+  <div id="caja" style="border: 1px solid black; width: 50px; height:50px;">
+    Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de
+    relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la
+    imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos
+    especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos,
+    quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las
+    cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus
+    PageMaker, el cual incluye versiones de Lorem Ipsum.
+  </div>
+
+  <simple-tiny
+    [elementId]="'descripcionTienda'"
+    (onEditorKeyup)="textoRichEditor($event)"
+  >
+  </simple-tiny>
+
+
+  <hr>
+  <h1>{{titulo}}</h1>
+  <ul>
+    <li>Camiseta</li>
+    <li>zapato</li>
+  </ul>
+
+  <hr>
+  NOmbre parque:
+  <input type="text" [(ngModel)]="nombreDelparque" (keyup)="mostrarNombre()"/>
+  <p>
+    Resultado: {{nombreDelparque}}
+  </p>
+
+  <div *ngIf="miParque">
+    <h4>Datos de miParque desde el hijo</h4>
+
+    <ol>
+      <li>{{miParque.nombre}}</li>
+      <li>{{miParque.metros}}</li>
+      <li>{{miParque.vegetacion}}</li>
+      <li>{{miParque.abierto}}</li>
+    </ol>
+
+  </div>
+
+
+  <hr>
+  <p *ngIf="nombreDelparque">
+    <parques [nombre]="nombreDelparque"
+             [metros_c]="55555"
+             (pasameDatos)="verDatosParque($event)"
+    ></parques>
+  </p>
 </div>
-<div class="caja_animada">
-
-</div>
-<hr>
-<h4>Utilizar JQuery dentro de angular</h4>
-<button id="botonjq">Mostrar Texto</button>
-<p id="textojq" class="alert alert-warning">
-  Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
-</p>
-<div id="caja" style="border: 1px solid black; width: 50px; height:50px;">
-  Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
-</div>
-
-<simple-tiny
-  [elementId]="'descripcionTienda'"
-  (onEditorKeyup)="textoRichEditor($event)"
->
-</simple-tiny>
-
-
-<hr>
-<h1>{{titulo}}</h1>
-<ul>
-  <li>Camiseta</li>
-  <li>zapato</li>
-</ul>
-
-<hr>
-NOmbre parque:
-<input type="text" [(ngModel)]="nombreDelparque" (keyup)="mostrarNombre()"/>
-<p>
-  Resultado: {{nombreDelparque}}
-</p>
-
-<div *ngIf="miParque">
-  <h4>Datos de miParque desde el hijo</h4>
-
-  <ol>
-    <li>{{miParque.nombre}}</li>
-    <li>{{miParque.metros}}</li>
-    <li>{{miParque.vegetacion}}</li>
-    <li>{{miParque.abierto}}</li>
-  </ol>
-
-</div>
-
-
-<hr>
-<p *ngIf="nombreDelparque">
-  <parques [nombre]="nombreDelparque"
-           [metros_c]="55555"
-           (pasameDatos)="verDatosParque($event)"
-  ></parques>
-</p>

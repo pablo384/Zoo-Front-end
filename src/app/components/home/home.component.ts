@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {fundido} from '../animation';
+import {fadeIn} from '../animation';
 
 @Component({
   selector: 'home',
   templateUrl: './home.component.html',
-  animations:[fundido]
+  animations:[fadeIn]
 })
 export class HomeComponent implements OnInit{
   title="Bienvenido a NGZOO";

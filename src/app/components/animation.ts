@@ -1,13 +1,16 @@
 import {animate, state, style, transition, trigger} from '@angular/animations';
 
 
-export const fundido=
+export const fadeIn=
   trigger('fadeIn',[
     transition(':enter',[
+      //cuando la animacion entra
       style({
         opacity: 0
+
       }),
-      animate('500ms linear', style(
+      //cuando la animacionn acaba
+      animate('300ms linear', style(
         {
           opacity: 1
         })
