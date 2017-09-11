@@ -1,22 +1,34 @@
-<div class="col-lg6">
+<div class="col-lg-6">
   <h1>{{title}}</h1>
-  <form action="">
+  <form #registerFrom="ngForm" (ngSubmit)="onSubmit()" class="col-lg-10">
     <p>
       <label>Nombre</label>
-      <input type="text" name="name" class="form-control" required>
+      <input type="text" name="name" #name="ngModel" [(ngModel)]="user.name" class="form-control" required>
+      <span *ngIf="!name.valid && name.touched">
+        El nombre es obligatorio
+      </span>
     </p>
     <p>
       <label>Apellidos</label>
-      <input type="text" name="name" class="form-control" required>
+      <input type="text" name="name" #surname="ngModel" [(ngModel)]="user.surname" class="form-control" required>
+      <span *ngIf="!surname.valid && surname.touched">
+        Los apellidos son obligatorios
+      </span>
     </p>
     <p>
       <label>Correo Electronico</label>
-      <input type="email" name="email" class="form-control" required>
+      <input type="email" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control" required>
+      <span *ngIf="!email.valid && email.touched">
+        El email no es correcto
+      </span>
     </p>
     <p>
       <label>Contrasena</label>
-      <input type="password" name="password" class="form-control" required>
+      <input type="password" name="password" #password="ngModel" [(ngModel)]="user.password" class="form-control" required>
+      <span *ngIf="!password.valid && password.touched">
+        La contrasena no es correcta
+      </span>
     </p>
-    <input type="submit" value="{{title}}" class="btn btn-primary">
+    <input type="submit" value="{{title}}" class="btn btn-primary" [disabled]="!registerFrom.form.valid">
   </form>
 </div>
