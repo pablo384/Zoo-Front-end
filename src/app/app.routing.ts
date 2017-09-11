@@ -1,16 +1,14 @@
 import {ModuleWithProviders} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
-
+import {RouterModule, Routes} from '@angular/router';
 //componentes
-import {AppComponent} from './app.component';
 import {TiendaComponent} from './components/tienda/tienda.component';
-import {ParquesComponent} from './components/parques/parques.component';
 import {HomeComponent} from './components/home/home.component';
 import {KeepersComponent} from './components/keepers/keepers.component';
 import {ContactComponent} from './components/contact/contact.component';
 import {AnimalsComponent} from './components/animals/animals.component';
 import {RegisterComponent} from './components/register/register.component';
 import {LoginComponent} from './components/login/login.component';
+import {UserEditComponent} from './components/user-edit/user-edit.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -22,6 +20,7 @@ const appRoutes: Routes = [
   {path: 'cuidadores', component: KeepersComponent},
   {path: 'registro', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'mis-datos', component: UserEditComponent},
   {path: '**', component: HomeComponent}
 
 ];
