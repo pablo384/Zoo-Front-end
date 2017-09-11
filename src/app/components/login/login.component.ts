@@ -1,9 +1,11 @@
 import { Component, OnInit} from '@angular/core';
 import {Router, ActivatedRoute, Params} from '@angular/router';
+import {UserService} from '../../services/user.service';
 
 @Component({
   selector: 'login',
-  templateUrl: './login.component.html'
+  templateUrl: './login.component.html',
+  providers:[UserService]
 })
 export class LoginComponent implements OnInit{
 
@@ -13,7 +15,7 @@ export class LoginComponent implements OnInit{
     private _route:ActivatedRoute,
     private _router:Router
   ){
-    this.title='Login';
+    this.title='Identificate';
   }
 
   ngOnInit(): void {
