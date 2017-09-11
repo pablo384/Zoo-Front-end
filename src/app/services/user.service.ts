@@ -12,7 +12,11 @@ export class UserService{
     this.url= GLOBAL.url;
   }
 
-  register(){
-    return "Texto desde el servicio";
+  register(user_to_register){
+    let params= JSON.stringify(user_to_register);
+    let headers= new Headers({'Content-Type':'application/json'});
+
+    return this._http.post(this.url+'register', params,{headers:headers})
+      .map(res=>res.json());
   }
 }
