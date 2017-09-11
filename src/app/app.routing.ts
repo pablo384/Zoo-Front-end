@@ -9,6 +9,8 @@ import {HomeComponent} from './components/home/home.component';
 import {KeepersComponent} from './components/keepers/keepers.component';
 import {ContactComponent} from './components/contact/contact.component';
 import {AnimalsComponent} from './components/animals/animals.component';
+import {RegisterComponent} from './components/register/register.component';
+import {LoginComponent} from './components/login/login.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -18,6 +20,8 @@ const appRoutes: Routes = [
   {path: 'animales', component: AnimalsComponent},
   {path: 'contacto', component: ContactComponent},
   {path: 'cuidadores', component: KeepersComponent},
+  {path: 'registro', component: RegisterComponent},
+  {path: 'login', component: LoginComponent},
   {path: '**', component: HomeComponent}
 
 ];

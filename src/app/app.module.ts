@@ -19,7 +19,8 @@ import {HomeComponent} from './components/home/home.component';
 import {KeepersComponent} from './components/keepers/keepers.component';
 import {ContactComponent} from './components/contact/contact.component';
 import {AnimalsComponent} from './components/animals/animals.component';
-
+import {LoginComponent} from './components/login/login.component';
+import {RegisterComponent} from './components/register/register.component';
 
 
 @NgModule({
@@ -31,7 +32,9 @@ import {AnimalsComponent} from './components/animals/animals.component';
     HomeComponent,
     KeepersComponent,
     ContactComponent,
-    AnimalsComponent
+    AnimalsComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     FormsModule,

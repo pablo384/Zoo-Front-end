@@ -7,7 +7,11 @@
   box-shadow: 2px 2px 1px #ccc;
 }
 .navbar-nav .active{
-  border-bottom: 3px solid orange;
+  border-bottom: 3px solid orange !important;
+}
+.navbar-nav>li>a{
+  transition: all 300ms;
+  border-bottom: 3px solid transparent;
 }
 .navbar-nav>li>a:hover{
   border-bottom: 3px solid orange;
