@@ -30,7 +30,7 @@
         </li>
 
       </ul>
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right" *ngIf="!identity">
         <li>
           <a routerLink="/registro" routerLinkActive="active">
           <span class="glyphicon glyphicon-user">
@@ -44,6 +44,26 @@
             Login
           </span>
           </a>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right" *ngIf="identity">
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            {{identity.name}} <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a>
+                <span class="glyphicon glyphicon-cog"></span>
+                Mis datos</a>
+            </li>
+            <li>
+              <a>
+                <span class="glyphicon glyphicon-log-out"></span>
+                Salir</a>
+            </li>
+          </ul>
         </li>
       </ul>
     </div>
