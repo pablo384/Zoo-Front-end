@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
-import {Http, Response, Headers} from '@angular/http';
+import {Headers, Http} from '@angular/http';
 import 'rxjs/add/operator/map';
-import {Observable} from 'rxjs/Observable';
 import {GLOBAL} from './global';
 
 @Injectable()
@@ -17,6 +16,13 @@ export class UserService{
     let headers= new Headers({'Content-Type':'application/json'});
 
     return this._http.post(this.url+'register', params,{headers:headers})
+      .map(res=>res.json());
+  }
+  login(user_to_register){
+    let params= JSON.stringify(user_to_register);
+    let headers= new Headers({'Content-Type':'application/json'});
+
+    return this._http.post(this.url+'login', params,{headers:headers})
       .map(res=>res.json());
   }
 }
