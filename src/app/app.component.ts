@@ -1,5 +1,6 @@
 import {Component, DoCheck, OnInit} from '@angular/core';
 import {UserService} from './services/user.service';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,9 @@ export class AppComponent implements OnInit, DoCheck{
   public identity;
 
   constructor(
-    private _userService:UserService
+    private _userService:UserService,
+    private _route: ActivatedRoute,
+    private _router: Router
   ){
     this.title='NGZOO';
   }
@@ -25,5 +28,10 @@ export class AppComponent implements OnInit, DoCheck{
 
   ngDoCheck(): void {
     this.identity=this._userService.getIdentity();
+  }
+  logout(){
+      localStorage.clear();
+      this.identity=null;
+      this._router.navigate(['/'])
   }
 }
