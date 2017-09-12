@@ -24,5 +24,12 @@ export class AnimalService {
       .map(res => res.json());
 
   }
+  getAnimales(){
+
+    // let headers=new Headers({'Content-Type':'application/json'});
+    // let options = new RequestOptions({headers:headers});
+    return this._http.get(this.url+'animals')
+      .map(res => res.json());
+  }
 
 }
