@@ -50,6 +50,22 @@
   /*animation-iteration-count: infinite;*/
 
 }
+.image_for_edit{
+  width: 60px;
+  height: 60px;
+}
+.avatar{
+  width: 35px;
+  height: 35px;
+  border-radius: 700px;
+  overflow: hidden;
+  margin-top: 9px;
+  margin-right: 2px;
+}
+.avatar img{
+  width: 45px;
+  height: 45px;
+}
 
 @keyframes rotacion {
   0%{

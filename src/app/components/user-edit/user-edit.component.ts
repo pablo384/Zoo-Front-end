@@ -16,6 +16,7 @@ export class UserEditComponent implements OnInit{
   public status;
   public identity;
   public token;
+  public url;
 
   constructor(
     private _useService:UserService,
@@ -25,6 +26,7 @@ export class UserEditComponent implements OnInit{
     this.identity=this._useService.getIdentity();
     this.token=this._useService.getToken();
     this.user=this.identity;
+    this.url=GLOBAL.url;
   }
 
   ngOnInit(): void {
@@ -45,7 +47,7 @@ export class UserEditComponent implements OnInit{
               [],this.filesToUpload,this.token,'image').then(
               (result:any)=>{
                 this.user.image=result.image;
-                localStorage.setItem('identity',JSON.stringify(response.user));
+                localStorage.setItem('identity',JSON.stringify(this.user));
               }
             )
           }
