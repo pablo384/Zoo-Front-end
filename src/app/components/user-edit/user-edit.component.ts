@@ -1,11 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import {User} from '../../models/user';
 import {UserService} from '../../services/user.service';
+import {UploadService} from '../../services/upload.service';
+import {GLOBAL} from '../../services/global';
 
 @Component({
   selector:'user-edit',
   templateUrl:'./user-edit.component.html',
-  providers:[UserService]
+  providers:[UserService, UploadService]
 })
 
 export class UserEditComponent implements OnInit{
@@ -16,7 +18,8 @@ export class UserEditComponent implements OnInit{
   public token;
 
   constructor(
-    private _useService:UserService
+    private _useService:UserService,
+    private _uploadService:UploadService
   ){
     this.title='Actualizar mis datos';
     this.identity=this._useService.getIdentity();
@@ -38,6 +41,13 @@ export class UserEditComponent implements OnInit{
             localStorage.setItem('identity',JSON.stringify(response.user));
 
             //subida de la imagen
+            this._uploadService.makeFileRequest(GLOBAL.url+'upload-image-user/'+this.user._id,
+              [],this.filesToUpload,this.token,'image').then(
+              (result:any)=>{
+                this.user.image=result.image;
+                localStorage.setItem('identity',JSON.stringify(response.user));
+              }
+            )
           }
 
         },
@@ -49,6 +59,12 @@ export class UserEditComponent implements OnInit{
           }
         }
       )
+
+  }
+
+  public filesToUpload:Array<File>;
+  fileChangeEvent(fileInput:any){
+    this.filesToUpload=<Array<File>>fileInput.target.files;
 
   }
 }

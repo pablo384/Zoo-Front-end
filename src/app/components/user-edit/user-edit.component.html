@@ -29,7 +29,10 @@
         El email no es correcto
       </span>
       </p>
+    <p>
+      <label>Sube tu Avatar</label>
+      <input type="file" placeholder="Subir imagen" (change)="fileChangeEvent($event)" class="form-control">
+    </p>
       <input type="submit" value="{{title}}" class="btn btn-primary" [disabled]="!userEditform.form.valid">
-
   </form>
 </div>
