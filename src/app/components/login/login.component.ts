@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
         if (!this.identity || !this.identity._id) {
           alert('El usuario no se ha logueado correctamente');
         } else {
-          this.identity.password='';
+
           localStorage.setItem('identity',JSON.stringify(this.identity));
           //conseguir el token
           this._userService.signup(this.user, 'true').subscribe(
