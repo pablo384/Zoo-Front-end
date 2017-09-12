@@ -19,7 +19,7 @@
     </p>
     <p>
       <label>Apellidos</label>
-      <input type="text" name="name" #surname="ngModel" [(ngModel)]="user.surname" class="form-control" required>
+      <input type="text" name="surname" #surname="ngModel" [(ngModel)]="user.surname" class="form-control" required>
       <span *ngIf="!surname.valid && surname.touched">
         Los apellidos son obligatorios
       </span>
