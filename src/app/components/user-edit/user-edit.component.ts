@@ -11,6 +11,7 @@ import {UserService} from '../../services/user.service';
 export class UserEditComponent implements OnInit{
   public title:string;
   public user:User;
+  public status;
   public identity;
   public token;
 
@@ -25,5 +26,8 @@ export class UserEditComponent implements OnInit{
 
   ngOnInit(): void {
       console.log('user-edit.component.ts cargado')
+  }
+  onSubmit(){
+
   }
 }
