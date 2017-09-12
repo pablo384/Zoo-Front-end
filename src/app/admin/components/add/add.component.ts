@@ -18,6 +18,7 @@ export class AddComponent implements OnInit{
   public identity;
   public token;
   public url:string;
+  public status;
 
   constructor(
     private _animalService:AnimalService,
@@ -36,5 +37,28 @@ export class AddComponent implements OnInit{
 
   ngOnInit(): void {
       console.log('animal-add componente ha sido cargado!!')
+  }
+
+  onSubmit(){
+    this._animalService.addAnimal(this.token,this.animal).subscribe(
+      response =>{
+        if (!response.animal){
+          this.status='error';
+        }else {
+          this.status='success';
+          this.animal=response.animal;
+
+          //subir imagen de animal
+          this._router.navigate(['/admin-panel/listado'])
+        }
+
+      },
+      error =>{
+        var erms=<any>error;
+        if (erms!=null){
+          this.status='error';
+        }
+      }
+    )
   }
 }
