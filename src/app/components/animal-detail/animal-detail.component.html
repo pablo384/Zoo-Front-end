@@ -1,0 +1,15 @@
+<h3>DETALLE</h3>
+<div class="animal-box" *ngIf="animal">
+
+  <div id="animal-head-card">
+    <img src="{{url+'get-image-animal/'+animal.image}}">
+
+  </div>
+  <div class="animal-data">
+    <p>{{animal.name}}</p>
+    <p>{{animal.user.name +' ' +animal.user.surname}}</p>
+    <p>{{animal.year}}</p>
+    <p>{{animal.description}}</p>
+  </div>
+
+</div>

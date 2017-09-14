@@ -24,7 +24,7 @@ export class ListComponent implements OnInit{
 
 
   ngOnInit(): void {
-    this._animalService.getAnimales().subscribe(
+    this._animalService.getAnimals().subscribe(
       response=>{
         if (!response.animals){
 
