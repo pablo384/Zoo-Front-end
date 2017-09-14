@@ -1,5 +1,8 @@
 .animal-head-card{
 }
+.animal-box{
+  display: flex;
+}
 .pointer{
   cursor: pointer;
 }

@@ -27,7 +27,7 @@ const adminRoutes:Routes=[
         component:AddComponent
       },
       {
-        path:'editar',
+        path:'editar/:id',
         component:EditComponent
       }
     ]
