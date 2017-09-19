@@ -4,6 +4,7 @@ import {AnimalService} from '../../services/animal.service';
 import {UserService} from '../../services/user.service';
 import {Animal} from '../../models/animal';
 import {SearchPipe} from '../../admin/pipes/search.pipe';
+import {GLOBAL} from '../../services/global';
 
 @Component({
   selector: 'animals',
@@ -15,10 +16,12 @@ export class AnimalsComponent implements OnInit{
   public title;
   public animals: Animal[];
   public busqueda;
+  public url;
 
   constructor(private _animalService: AnimalService,
-              private _userService:UserService,){
+              private _userService:UserService){
     this.title='Animales'
+    this.url=GLOBAL.url;
   }
 
   ngOnInit(): void {
