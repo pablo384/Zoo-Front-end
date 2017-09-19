@@ -32,6 +32,7 @@ import {SearchPipe} from './pipes/search.pipe';
     EditComponent,
     ListComponent,
     AddComponent,
+    SearchPipe
   ],
   providers:[
     AdminGuard,

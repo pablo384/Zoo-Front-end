@@ -1,4 +1,18 @@
 
 <div class="col-lg-12" [@fadeIn]>
   <h1>{{title}}</h1>
+
+  <tbody>
+  <tr *ngFor="let animal of animals | search: busqueda">
+    <td>{{animal.name}}</td>
+    <td>{{animal.year}}</td>
+    <td>
+      <a class="btn btn-sm btn-success" routerLink="/animal/{{animal._id}}">
+        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+        Ver
+      </a>
+
+    </td>
+  </tr>
+  </tbody>
 </div>
