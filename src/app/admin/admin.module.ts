@@ -11,13 +11,15 @@ import {AddComponent} from './components/add/add.component';
 import {ListComponent} from './components/list/list.component';
 import {AdminGuard} from '../services/admin.guard';
 import {UserService} from '../services/user.service';
+import {SearchPipe} from './pipes/search.pipe';
 
 @NgModule({
   declarations:[
     MainComponent,
     EditComponent,
     ListComponent,
-    AddComponent
+    AddComponent,
+    SearchPipe
   ],
   imports:[
     CommonModule,
@@ -29,7 +31,7 @@ import {UserService} from '../services/user.service';
     MainComponent,
     EditComponent,
     ListComponent,
-    AddComponent
+    AddComponent,
   ],
   providers:[
     AdminGuard,
