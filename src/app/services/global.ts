@@ -1,3 +1,3 @@
 export const GLOBAL={
-  url:'http://localhost:3789/api/'
+  url:'https://murmuring-meadow-71137.herokuapp.com/api/'
 };
