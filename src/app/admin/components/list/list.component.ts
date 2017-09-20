@@ -3,11 +3,13 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {Animal} from '../../../models/animal';
 import {AnimalService} from '../../../services/animal.service';
 import {UserService} from '../../../services/user.service';
+import {fadeLateral} from '../../animation';
 
 @Component({
   selector: 'admin-list',
   templateUrl: './list.component.html',
-  providers: [AnimalService]
+  providers: [AnimalService],
+  animations:[fadeLateral]
 })
 export class ListComponent implements OnInit{
   numbers=Array(10);
