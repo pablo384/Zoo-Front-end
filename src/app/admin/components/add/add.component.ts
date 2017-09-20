@@ -21,6 +21,7 @@ export class AddComponent implements OnInit {
   public token;
   public url: string;
   public status;
+  public is_edit;
 
   constructor(private _animalService: AnimalService,
               private _route: ActivatedRoute,
