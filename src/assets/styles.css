@@ -8,10 +8,15 @@ h3 a:hover{
   color: #000;
   text-decoration: none;
 }
-.animal-image-mask{
+.animal-image-mask,
+.keeper-image-mask{
   width: 100%;
   height: 200px;
   overflow: hidden;
+}
+.animal-image-mask img,
+.keeper-image-mask img{
+  max-height: 400px;
 }
 .animal-box{
   display: flex;
