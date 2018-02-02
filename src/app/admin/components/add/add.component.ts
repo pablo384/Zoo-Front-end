@@ -11,7 +11,7 @@ import {fadeLateral} from '../../animation';
   selector: 'admin-add',
   templateUrl: './add.component.html',
   providers: [UserService, AnimalService, UploadService],
-  animations:[fadeLateral]
+  animations: [fadeLateral]
 })
 export class AddComponent implements OnInit {
 
@@ -21,6 +21,7 @@ export class AddComponent implements OnInit {
   public token;
   public url: string;
   public status;
+  public is_edit;
 
   constructor(private _animalService: AnimalService,
               private _route: ActivatedRoute,
@@ -28,7 +29,7 @@ export class AddComponent implements OnInit {
               private _userService: UserService,
               private _uploadService: UploadService) {
     this.title = 'Agregar Animal';
-    this.animal = new Animal('','', '', 2017, '', '');
+    this.animal = new Animal('', '', '', 2017, '', '');
     this.identity = this._userService.getIdentity();
     this.token = this._userService.getToken();
     this.url = GLOBAL.url;
@@ -66,7 +67,7 @@ export class AddComponent implements OnInit {
 
       },
       error => {
-        var erms = <any>error;
+        let erms = <any>error;
         if (erms != null) {
           this.status = 'error';
         }
