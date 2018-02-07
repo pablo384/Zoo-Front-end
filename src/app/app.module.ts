@@ -21,6 +21,7 @@ import {RegisterComponent} from './components/register/register.component';
 import {UserEditComponent} from './components/user-edit/user-edit.component';
 import {AnimalDetailComponent} from './components/animal-detail/animal-detail.component';
 import { SeoService } from './seo.service';
+import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 
 
 @NgModule({
@@ -47,7 +48,11 @@ import { SeoService } from './seo.service';
     AdminModule,
     BrowserAnimationsModule
   ],
-  providers: [appRoutingProviders, SeoService],
+  providers: [
+    appRoutingProviders,
+    SeoService,
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
