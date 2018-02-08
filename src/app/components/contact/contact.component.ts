@@ -15,9 +15,9 @@ export class ContactComponent implements OnInit{
   ngOnInit(): void {
     console.log('contact.component.ts');
     this.seo.generateTags({
-      title: 'Contact Page',
-      description: 'Contact me through this awesome search engine optimized Angular component',
-      image: 'https://instafire-app.firebaseapp.com/assets/meerkat.jpeg',
+      title: 'Pagina de contacto',
+      description: 'Esto es una prueba de la pagina de contacto',
+      image: 'https://i.imgur.com/4V8hMwr.jpg',
       slug: 'contacto'
     });
   }
